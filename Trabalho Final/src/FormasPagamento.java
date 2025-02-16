@@ -1,10 +1,12 @@
 public class FormasPagamento {
+    private int id;
     private String forma;
     private int quantParcelas;
-    private double percJuros;
+    private float percJuros;
 
 
-    public FormasPagamento(String forma, int quantParcelas, double percJuros) {
+    public FormasPagamento(int id, String forma, int quantParcelas, float percJuros) {
+        this.id = id;
         this.forma = forma;
         this.quantParcelas = quantParcelas;
         this.percJuros = percJuros;
