@@ -1,41 +1,35 @@
-public class Product {
-    private String nome;
-    private String descricao;
-    private double precoVenda;
-    private int estoque;
-    private String caminhoImagem;
-    private boolean usado;
+public class Vendas {
+    private User usuario;
+    private Product produto;
+    private int quantidade;
+    private FormasPagamento formaPagamento;
+    private boolean cancelado;
+    private String motivoCancelamento;
 
-    Product(String nome, String descricao, double precoVenda, int estoque, String caminhoImagem, boolean usado){
-        this.nome = nome;
-        this.descricao = descricao;
-        this.precoVenda = precoVenda;
-        this.estoque = estoque;
-        this.caminhoImagem = caminhoImagem;
-        this.usado = usado;
+    public Vendas(User usuario, Product produto, int quantidade, FormasPagamento formaPagamento) {
+
+        this.usuario = usuario;
+        this.produto = produto;
+        this.quantidade = quantidade;
+        this.formaPagamento = formaPagamento;
+        this.cancelado = false;
+        this.motivoCancelamento = null;
     }
 
-    public String getNome() {
-        return nome;
+    public void CancelarVenda(String motivo){
+        if (!this.cancelado){
+            this.cancelado = true;
+            this.motivoCancelamento = motivo;
+        } else {
+            System.out.println("Venda não foi cancelada");
+        }
+
+    }
+    public boolean isCancelado() {
+        return cancelado;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public double getPrecoVenda() {
-        return precoVenda;
-    }
-
-    public int getEstoque() {
-        return estoque;
-    }
-
-    public String getCaminhoImagem() {
-        return caminhoImagem;
-    }
-
-    public boolean isUsado() {
-        return usado;
+    public String getMotivoCancelamento() {
+        return motivoCancelamento;
     }
 }
