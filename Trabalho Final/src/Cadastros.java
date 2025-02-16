@@ -29,7 +29,3 @@ public class Cadastros {
         avaliacao.add(avaliacaos);
     }
 }
-
-
-
-
