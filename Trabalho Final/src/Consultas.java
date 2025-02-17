@@ -31,16 +31,23 @@ public class Consultas {
                     ", Quantidade: " + venda.getQuantidade() +
                     ", Valor: " + venda.getProduto().getPrecoVenda());
 
-            
-            for (AvaliaCao avaliacao : cadastros.avaliacao) {
+
+            AvaliaCao avaliacaoEncontrada = null;
+            int i = 0;
+            while (i < cadastros.avaliacao.size() && avaliacaoEncontrada == null) {
+                AvaliaCao avaliacao = cadastros.avaliacao.get(i);
                 if (avaliacao.getUsuario().getId() == venda.getUsuario().getId() &&
                         avaliacao.getProduto().getId() == venda.getProduto().getId()) {
-
-                    System.out.println("  -> Avaliação ID: " + avaliacao.getId() +
-                            ", Rating: " + avaliacao.getRating() +
-                            ", Comentário: " + avaliacao.getTexto());
-                    break; 
+                    avaliacaoEncontrada = avaliacao;
                 }
+                i++;
+            }
+
+            if (avaliacaoEncontrada != null) {
+                System.out.println("Avaliação ID: " + avaliacaoEncontrada.getId() +
+                        ", Usuário ID: " + avaliacaoEncontrada.getUsuario().getId() +
+                        ", Produto ID: " + avaliacaoEncontrada.getProduto().getId() +
+                        ", Comentário: " + avaliacaoEncontrada.getTexto());
             }
         }
     }
