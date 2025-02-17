@@ -1,13 +1,35 @@
 public class AvaliaCao {
-    private Product produto;
+    private final int id;
+    private final Product produto;
     private User usuario;
     private int rating;
     private String texto;
 
-    public AvaliaCao(Product produto, User usuario, int rating, String texto) {
+    public AvaliaCao(int id, Product produto, User usuario, int rating, String texto) {
+        this.id = id;
         this.produto = produto;
         this.usuario = usuario;
         this.rating = rating;
         this.texto = texto;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Product getProduto() {
+        return produto;
+    }
+
+    public User getUsuario() {
+        return usuario;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public String getTexto() {
+        return texto;
     }
 }
