@@ -46,4 +46,3 @@ public class Product {
         return usado;
     }
 }
-
