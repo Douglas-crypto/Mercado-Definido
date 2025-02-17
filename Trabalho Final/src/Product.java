@@ -1,35 +1,49 @@
-public class Vendas {
-    private User usuario;
-    private Product produto;
-    private int quantidade;
-    private FormasPagamento formaPagamento;
-    private boolean cancelado;
-    private String motivoCancelamento;
+public class Product {
+    private final int id;
+    private final String nome;
+    private final String descricao;
+    private float precoVenda;
+    private int estoque;
+    private final String caminhoImagem;
+    private final boolean usado;
 
-    public Vendas(User usuario, Product produto, int quantidade, FormasPagamento formaPagamento) {
-
-        this.usuario = usuario;
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.formaPagamento = formaPagamento;
-        this.cancelado = false;
-        this.motivoCancelamento = null;
-    }
-
-    public void CancelarVenda(String motivo){
-        if (!this.cancelado){
-            this.cancelado = true;
-            this.motivoCancelamento = motivo;
-        } else {
-            System.out.println("Venda não foi cancelada");
-        }
+    Product(int id, String nome, String descricao, float precoVenda, int estoque, String caminhoImagem, boolean usado){
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.precoVenda = precoVenda;
+        this.estoque = estoque;
+        this.caminhoImagem = caminhoImagem;
+        this.usado = usado;
 
     }
-    public boolean isCancelado() {
-        return cancelado;
+
+    public int getId() {
+        return id;
     }
 
-    public String getMotivoCancelamento() {
-        return motivoCancelamento;
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public float getPrecoVenda() {
+        return precoVenda;
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public String getCaminhoImagem() {
+        return caminhoImagem;
+    }
+
+    public boolean isUsado() {
+        return usado;
     }
 }
+
