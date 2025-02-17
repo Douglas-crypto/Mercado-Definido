@@ -1,21 +1,26 @@
 public class User {
-    private String username;
+    private final int id;
+    private final String username;
     private String cpf_cnpj;
     private String endereco;
     private String email;
     private String senha;
 
-    User(String username, String cpf_cnpj, String endereco, String email, String senha){
+    User(int id, String username, String cpf_cnpj, String endereco, String email, String senha) {
+        this.id = id;
         this.username = username;
         this.cpf_cnpj = cpf_cnpj;
         this.endereco = endereco;
         this.email = email;
         this.senha = senha;
-
     }
 
     public String getUsername() {
         return username;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getCpf_cnpj() {
