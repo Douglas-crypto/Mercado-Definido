@@ -8,7 +8,7 @@ public class Consultas {
     public void consultaUsuarioPorId(int id) {
         for (User user : cadastros.usuarios) {
             if (user.getId() == id) {
-                return;
+                System.out.println("Usuário: " + user.getId());
             }
         }
     }
@@ -16,26 +16,33 @@ public class Consultas {
     public void consultaProdutoID(int id) {
         for (Product product : cadastros.produtos) {
             if (product.getId() == id) {
-                return;
+                System.out.println("Produto: " + product.getId());
             }
         }
     }
 
-    public void consultaGeral() {
-
-        for (Vendas venda : cadastros.vendas) {
-            System.out.println("Usuário ID: " + venda.getUsuario().getId() +
-                    ", Produto ID: " + venda.getProduto().getId() +
-                    ", Quantidade: " + venda.getQuantidade() +
-                    ", Valor: " + venda.getProduto().getPrecoVenda());
+    public void consultaFormasPagamentoID(int id) {
+        for (FormasPagamento formasPagamento : cadastros.formaPagamento) {
+            if (formasPagamento.getId() == id) {
+                System.out.println("Forma de Pagamento: " + formasPagamento.getId());
+            }
         }
+    }
 
-        // Exibe informações sobre as avaliações
-        for (AvaliaCao avaliacao : cadastros.avaliacao) {
-            System.out.println("Avaliação ID: " + avaliacao.getId() +
-                    ", Usuário ID: " + avaliacao.getUsuario().getId() +
-                    ", Produto ID: " + avaliacao.getProduto().getId() +
-                    ", Comentário: " + avaliacao.getTexto());
+    public void consultaAvaliaCaoID(int id) {
+        for (AvaliaCao avaliaCao : cadastros.avaliacao) {
+            if (avaliaCao.getId() == id) {
+                System.out.println("Avaliação: " + avaliaCao.getRating());
+            }
         }
+    }
+
+    public void consultaGeral(int IDusuario, int IDproduto, int IDformaspagamento, int IDavaliacao, Product product) {
+        consultaUsuarioPorId(IDusuario);
+        consultaProdutoID(IDproduto);
+        consultaFormasPagamentoID(IDformaspagamento);
+        consultaAvaliaCaoID(IDavaliacao);
+        System.out.println("Produto Valor: " + String.format("%.3f", product.getPrecoVenda()));
+
     }
 }
