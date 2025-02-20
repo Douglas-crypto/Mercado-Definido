@@ -45,3 +45,4 @@ public class Product {
     public String getCaminhoImagem() {
         return caminhoImagem;
     }
+}
