@@ -34,6 +34,10 @@ public class Product {
         return precoVenda;
     }
 
+    public boolean isUsado(Product product) {
+        return product.usado;
+    }
+
     public int getEstoque() {
         return estoque;
     }
@@ -41,15 +45,3 @@ public class Product {
     public String getCaminhoImagem() {
         return caminhoImagem;
     }
-
-    public boolean isUsado(Product product) {
-        return usado;
-    }
-
-    public void ExibirInformacoes(Product product1){
-        System.out.println("Nome: " + getNome() +
-                "Estoque: " + getEstoque() +
-                "Descrição: " + getDescricao() +
-                "Caminho: " + getCaminhoImagem());
-    }
-}
