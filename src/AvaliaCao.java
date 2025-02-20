@@ -22,10 +22,6 @@ public class AvaliaCao {
         return produto;
     }
 
-    public User getUsuario() {
-        return usuario;
-    }
-
     public int getRating() {
         return rating;
     }
