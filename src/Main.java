@@ -39,7 +39,14 @@ public class Main {
         Product product1 = new Product(1,"Notebook Dell","Notebook Dell Inspiron 15, 8GB RAM, 256GB SSD",
                 3.500f,2,"imagens/notebook_dell.jpg", false);
 
+        System.out.println("Estoque do produto: " + product1.getEstoque());
+        System.out.println("Caminho da imagem do produto: " + product1.getCaminhoImagem());
+
         product1.isUsado(product1);
+
+        boolean produtoUsado = product1.isUsado(product1);
+        System.out.println("O produto está usado ? " + produtoUsado);
+
         cadastros.CadastroProduto(product1);
 
 
@@ -61,7 +68,7 @@ public class Main {
 
         System.out.println();
 
-      Consultas consulta1 = new Consultas(cadastros);
+        Consultas consulta1 = new Consultas(cadastros);
 
         consulta1.consultaUsuarioPorId(2);
 
@@ -74,6 +81,5 @@ public class Main {
         System.out.println();
 
         consulta1.consultaGeral(1,1,2,1,product1);
-
     }
 }
