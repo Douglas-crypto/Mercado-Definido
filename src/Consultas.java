@@ -1,3 +1,4 @@
+
 public class Consultas {
     Cadastros cadastros;
 
@@ -43,6 +44,5 @@ public class Consultas {
         consultaFormasPagamentoID(IDformaspagamento);
         consultaAvaliaCaoID(IDavaliacao);
         System.out.println("Produto Valor: " + String.format("%.3f", product.getPrecoVenda()));
-
     }
 }
