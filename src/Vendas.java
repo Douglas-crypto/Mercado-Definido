@@ -1,4 +1,3 @@
-
 public class Vendas {
     private final int id;
     User user;
@@ -37,16 +36,23 @@ public class Vendas {
         }
     }
 
-    public User getUsuario() {
-        return user;
-    }
-
-    public Product getProduto() {
-        return product;
-    }
-
     public int getQuantidade() {
         return quantidade;
     }
-}
 
+    public int getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public FormasPagamento getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+}
