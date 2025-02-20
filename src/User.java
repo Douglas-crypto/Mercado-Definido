@@ -39,6 +39,10 @@ class User {
         return password;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
     public void exibirInformacao() {
         System.out.println("ID: " + getId() +
                 "Nome: " + getUser() +
